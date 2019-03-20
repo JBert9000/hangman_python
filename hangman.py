@@ -97,7 +97,7 @@ def getGuess(alreadyGuessed):
                 elif len(guess) != 1:
                         print('Excuse me? You can only type 1 letter at a time.')
                 elif guess in alreadyGuessed:
-                        print('You already guessed this letter! Tyr again')
+                        print('You already guessed this letter! Try again')
                 elif guess not in 'qwertyuiopasdfghjklzxcvbnm':
                         print('only English letters please!')
                 else:
