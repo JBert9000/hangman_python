@@ -1,6 +1,7 @@
 from tkinter import *
 import tkinter.messagebox
 import random
+import sys
 
 
 HANGMANPICS = ['''
@@ -10,7 +11,8 @@ HANGMANPICS = ['''
         |
         |
         |
-===========''', '''
+===========
+type 'exit' or 'quit' to close game :)''', '''
     +---+
     |   |
     0   |
@@ -90,7 +92,9 @@ def getGuess(alreadyGuessed):
                 print('Guess a letter')
                 guess = input()
                 guess = guess.lower()
-                if len(guess) != 1:
+                if guess in ("exit", "quit"):
+                        raise SystemExit
+                elif len(guess) != 1:
                         print('Excuse me? You can only type 1 letter at a time.')
                 elif guess in alreadyGuessed:
                         print('You already guessed this letter! Tyr again')
